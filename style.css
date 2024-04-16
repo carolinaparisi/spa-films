@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-title {
+  display: flex;
+  justify-content: center;
+  border: 2px solid blue;
+  font-size: 3rem;
+}
+
+#films-container {
+  border: 4px solid palevioletred;
+  height: 50rem;
+}
+
+#film-pool {
+  border: 4px solid magenta;
+}
