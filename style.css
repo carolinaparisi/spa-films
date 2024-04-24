@@ -11,6 +11,10 @@
 	font-size: 3rem;
 }
 
+.movieDiv {
+	font-size: 2rem;
+}
+
 #films-container {
 	border: 4px solid palevioletred;
 	height: 80rem;

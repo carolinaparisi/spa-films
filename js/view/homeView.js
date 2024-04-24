@@ -1,10 +1,12 @@
-function show() {
-  console.log("Inside homeView");
-  const filmElem = document.getElementById("films-container");
-  const newDiv = document.createElement("div");
-  newDiv.innerHTML = "HERE I'M GONNA SHOW THE MOVIES!";
+function show(arrayMovies) {
+	const filmElem = document.getElementById("films-container");
 
-  filmElem.append(newDiv);
+	arrayMovies.forEach((element) => {
+		const newDiv = document.createElement("div");
+		newDiv.setAttribute("class", "movieDiv");
+		newDiv.innerHTML = element.title;
+		filmElem.append(newDiv);
+	});
 }
 
 export default { show };
