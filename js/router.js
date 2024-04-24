@@ -1,31 +1,41 @@
 import routes from "/js/routes.js";
 
 function init() {
-  window.location.hash = window.location.hash || routes.paths.home.path;
-  const pathToLaunch = window.location.hash;
+	history.pushState({}, "", "/");
+	handleRouter();
 
-  window.addEventListener("hashchange", function () {
-    const pathToLaunch = window.location.hash;
-    console.log("FIRST");
-    launchController(pathToLaunch);
-  });
+	window.handleRouter = route;
+}
 
-  console.log("SECOND");
-  launchController(pathToLaunch);
+function handleRouter() {
+	const url = window.location.href;
+	const homeUrl = new URL(window.location.href);
+	console.log(homeUrl.pathname);
+	launchController(homeUrl.pathname);
 }
 
 async function launchController(controllerName) {
-  console.log(controllerName);
-  let controller = "";
-  if (controllerName === "/") {
-    //WHY DOES THIS GIVE ME A PROMISE?
-    controller = await import(`/js/controller/homeController.js`);
-    console.log(controller);
-    controller.default.init();
-    return;
-  }
-  controller = await import(`/js/controller${controllerName}.js`);
-  controller.init();
+	if (controllerName === "/") {
+		const homeController = await import(`/js/controller/homeController.js`);
+		homeController.default.init();
+		return;
+	}
+
+	const currentController = await import(
+		`/js/controller/${controllerName}Controller.js`
+	);
+
+	currentController.default.init();
+}
+
+window.addEventListener("popstate", () => {
+	history.pushState(null, null, "/details");
+	detailsButton();
+});
+
+function route() {
+	console.log("Helloooooo");
+	//handleRouter();
 }
 
 export default { init };

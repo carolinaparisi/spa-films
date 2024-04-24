@@ -4,7 +4,6 @@ const paths = {
     controller: "homeController",
   },
   details: {
-    //TODO: probably need to change this path!!
     path: "/details",
     controller: "detailsController",
   },
