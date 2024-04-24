@@ -4,14 +4,13 @@ function init() {
 	history.pushState({}, "", "/");
 	handleRouter();
 
-	window.handleRouter = route;
+	window.route = route;
 }
 
 function handleRouter() {
-	const url = window.location.href;
-	const homeUrl = new URL(window.location.href);
-	console.log(homeUrl.pathname);
-	launchController(homeUrl.pathname);
+	const url = new URL(window.location.href);
+	console.log(url.pathname);
+	launchController(url.pathname);
 }
 
 async function launchController(controllerName) {
@@ -33,9 +32,10 @@ window.addEventListener("popstate", () => {
 	detailsButton();
 });
 
-function route() {
-	console.log("Helloooooo");
-	//handleRouter();
-}
+const route = (event) => {
+	event.preventDefault();
+	history.pushState({}, "", event.target.href);
+	handleRouter();
+};
 
 export default { init };
