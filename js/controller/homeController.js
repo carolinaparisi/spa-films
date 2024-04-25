@@ -6,7 +6,15 @@ async function init() {
 	console.log(moviesList);
 	const arrayMovies = moviesList.results;
 
-	homeView.show(arrayMovies);
+	let promisesMoviesImages = [];
+	arrayMovies.forEach((element) => {
+		const currentImage = movieService.fetchMovieImage(element.poster_path);
+		promisesMoviesImages.push(currentImage);
+	});
+
+	const moviesImg = Promise.all(promisesMoviesImages);
+
+	homeView.show(arrayMovies, moviesImg);
 }
 
 export default { init };
