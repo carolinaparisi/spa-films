@@ -1,12 +1,13 @@
-const paths = {
-  home: {
-    path: "/",
-    controller: "homeController",
-  },
-  details: {
-    path: "/details",
-    controller: "detailsController",
-  },
+export const paths = {
+	home: {
+		path: "/",
+		controller: "homeController",
+	},
+	details: {
+		path: "/details",
+		controller: "detailsController",
+	},
+	notFound: {
+		controller: "notFoundController",
+	},
 };
-
-export default { paths };

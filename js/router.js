@@ -1,4 +1,4 @@
-import routes from "/js/routes.js";
+import { paths } from "/js/routes.js";
 
 function init() {
 	history.pushState({}, "", "/");
@@ -13,29 +13,35 @@ function handleRouter() {
 	launchController(url.pathname);
 }
 
-async function launchController(controllerName) {
-	if (controllerName === "/") {
-		const homeController = await import(`/js/controller/homeController.js`);
+async function launchController(pathname) {
+	let currentController = "";
+
+	if (pathname === paths.home.path) {
+		const homeController = await import(
+			`/js/controller/${paths.home.controller}.js`
+		);
 		homeController.default.init();
 		return;
 	}
 
-	const currentController = await import(
-		`/js/controller/${controllerName}Controller.js`
+	if (pathname === paths.details.path) {
+		currentController = await import(`/js/controller${pathname}Controller.js`);
+		currentController.default.init();
+		return;
+	}
+
+	currentController = await import(
+		`/js/controller/${paths.notFound.controller}.js`
 	);
 
 	currentController.default.init();
 }
 
-window.addEventListener("popstate", () => {
-	history.pushState(null, null, "/details");
-	detailsButton();
-});
-
 const route = (event) => {
+	console.log(event);
 	event.preventDefault();
 	history.pushState({}, "", event.target.href);
 	handleRouter();
 };
 
-export default { init };
+export default { init, handleRouter };
