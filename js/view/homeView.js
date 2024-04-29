@@ -8,13 +8,14 @@ async function show(movies, moviesImg) {
 
 	images.forEach((image, index) => {
 		const movieContainer = document.createElement("div");
+		movieContainer.setAttribute("class", "movie-container");
 
 		const imageDiv = document.createElement("img");
 		imageDiv.setAttribute("src", image.url);
 		movieContainer.append(imageDiv);
 
 		const titleDiv = document.createElement("div");
-		titleDiv.setAttribute("class", "movieDiv");
+		titleDiv.setAttribute("class", "movie-title");
 		titleDiv.innerHTML = movies[index].title;
 
 		//Button just to test the button router behavior
