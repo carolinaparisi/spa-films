@@ -5,10 +5,15 @@
 }
 
 .main-title {
+	color: #ffffff;
+	background: #ffffff;
+	text-shadow: 1px 3px 0 #5b5b5b, 1px 13px 5px #74487e;
+	background: #ffffff;
+	background-color: #ff69b4;
 	display: flex;
 	justify-content: center;
-	border: 2px solid blue;
-	font-size: 3rem;
+	font-size: 8rem;
+	font-family: "Jersey 15", sans-serif;
 }
 
 .movieDiv {
