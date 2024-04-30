@@ -25,6 +25,7 @@
 	background-color: #ffbede;
 }
 
+/*TODO: need to put width in %;*/
 #main-img {
 	margin-bottom: 3rem;
 	width: 80rem;
@@ -48,24 +49,18 @@
 }
 
 .movie-container {
+	border: 10px solid white;
+	background-color: #ff6d69;
 	display: flex;
 	flex-direction: column;
 	width: 20%;
 }
 
 #films-container {
+	background-color: #c669ff;
 	display: flex;
 	flex-wrap: wrap;
-	height: 80rem;
-}
-
-#film-pool {
-	border: 4px solid magenta;
-}
-
-#details-link {
-	border: 2px solid greenyellow;
-	font-size: 2rem;
+	justify-content: space-around;
 }
 
 #details-button {
