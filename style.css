@@ -2,10 +2,10 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: "Jersey 15", sans-serif;
 }
 
 .main-title {
+	font-family: "Jersey 15", sans-serif;
 	color: #ffffff;
 	background: #ffffff;
 	text-shadow: 1px 3px 0 #5b5b5b, 1px 13px 5px #74487e;
@@ -37,6 +37,7 @@
 }
 
 .greeting-text {
+	font-family: "Jersey 15", sans-serif;
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
@@ -48,15 +49,23 @@
 }
 
 .movie-title {
+	padding-top: 2rem;
 	font-size: 2rem;
+	color: white;
+	display: flex;
+	justify-content: center;
+	text-align: center;
 }
 
 .movie-container {
+	font-family: "Poppins", sans-serif;
+	padding: 2rem;
 	border: 10px solid white;
 	border-radius: 6px;
 	background-color: #ff6d69;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	width: 20%;
 	flex-grow: 1;
 }
@@ -70,5 +79,12 @@
 }
 
 #details-button {
-	font-size: 2rem;
+	margin: 1rem;
+	font-size: 1.5rem;
+	background-color: white;
+	text-decoration: none;
+	color: inherit;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	border-radius: 6px;
 }

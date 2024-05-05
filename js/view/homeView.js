@@ -11,6 +11,7 @@ async function show(movies, moviesImg) {
 		movieContainer.setAttribute("class", "movie-container");
 
 		const imageDiv = document.createElement("img");
+		imageDiv.setAttribute("class", "film-img");
 		imageDiv.setAttribute("src", image.url);
 		movieContainer.append(imageDiv);
 
@@ -18,11 +19,9 @@ async function show(movies, moviesImg) {
 		titleDiv.setAttribute("class", "movie-title");
 		titleDiv.innerHTML = movies[index].title;
 
+		movieContainer.append(titleDiv);
 		//Button just to test the button router behavior
 		createDetailsButton(movieContainer);
-
-		movieContainer.append(titleDiv);
-
 		filmContainer.append(movieContainer);
 	});
 
