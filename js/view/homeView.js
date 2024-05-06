@@ -2,7 +2,6 @@ import router from "/js/router.js";
 
 async function show(movies, moviesImg) {
 	const images = await moviesImg;
-	console.log(images);
 
 	const filmContainer = document.getElementById("films-container");
 
@@ -21,14 +20,14 @@ async function show(movies, moviesImg) {
 
 		movieContainer.append(titleDiv);
 		//Button just to test the button router behavior
-		createDetailsButton(movieContainer);
+		createDetailsButton(movieContainer, movies[index].id);
 		filmContainer.append(movieContainer);
 	});
 
-	function createDetailsButton(movieContainer) {
+	function createDetailsButton(movieContainer, movieId) {
 		const anchorButton = document.createElement("a");
 		anchorButton.setAttribute("id", "details-button");
-		anchorButton.setAttribute("href", "/details");
+		anchorButton.setAttribute("href", `/details?id=${movieId}`);
 		anchorButton.setAttribute("onclick", "route(event)");
 		anchorButton.innerText = "DETAILS";
 

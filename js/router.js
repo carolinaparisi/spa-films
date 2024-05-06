@@ -7,13 +7,13 @@ function init() {
 	window.route = route;
 }
 
-function handleRouter() {
+function handleRouter(movieId) {
 	const url = new URL(window.location.href);
 	console.log(url.pathname);
-	launchController(url.pathname);
+	launchController(url.pathname, movieId);
 }
 
-async function launchController(pathname) {
+async function launchController(pathname, movieId) {
 	let currentController = "";
 
 	if (pathname === paths.home.path) {
@@ -26,7 +26,7 @@ async function launchController(pathname) {
 
 	if (pathname === paths.details.path) {
 		currentController = await import(`/js/controller${pathname}Controller.js`);
-		currentController.default.init();
+		currentController.default.init(movieId);
 		return;
 	}
 
@@ -41,7 +41,9 @@ const route = (event) => {
 	console.log(event);
 	event.preventDefault();
 	history.pushState({}, "", event.target.href);
-	handleRouter();
+	const searchParams = new URLSearchParams(window.location.search);
+	const movieId = searchParams.toString().substring(3);
+	handleRouter(movieId);
 };
 
 export default { init, handleRouter };

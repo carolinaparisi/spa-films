@@ -3,13 +3,11 @@ const imageUrl = "https://image.tmdb.org/t/p/w300";
 const apiKey = "api_key=00fafadfef9042a1a51d017c0969afc6";
 
 async function fetchMovieList() {
-	console.log("Inside fetchMovieList");
 	const movieList = await fetch(`${baseUrl}/popular?${apiKey}`);
 	return movieList.json();
 }
 
 async function fetchMovieImage(imgPath) {
-	console.log("Inside fetchMovieImage");
 	const movieImage = await fetch(`${imageUrl}${imgPath}`);
 	return movieImage;
 }
@@ -23,7 +21,7 @@ async function fetchMovieTheatres() {
 async function fetchMovieById(id) {
 	console.log("Inside fetchMovieTheatres");
 	const movieById = await fetch(`${baseUrl}/${id}?${apiKey}`);
-	return movieById;
+	return movieById.json();
 }
 
 export default {
