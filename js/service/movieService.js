@@ -19,7 +19,6 @@ async function fetchMovieTheatres() {
 }
 
 async function fetchMovieById(id) {
-	console.log("Inside fetchMovieTheatres");
 	const movieById = await fetch(`${baseUrl}/${id}?${apiKey}`);
 	return movieById.json();
 }

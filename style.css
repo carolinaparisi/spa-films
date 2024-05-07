@@ -88,3 +88,24 @@
 	padding-right: 0.5rem;
 	border-radius: 6px;
 }
+
+.details-card {
+	border-radius: 6px;
+	padding: 4rem;
+	display: flex;
+	justify-content: center;
+	border: 10px solid white;
+	height: 80rem;
+	width: 70rem;
+	background-color: #ffbede;
+}
+
+.support-details {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.film-img {
+	height: 60%;
+}

@@ -10,7 +10,6 @@ async function show(movies, moviesImg) {
 		movieContainer.setAttribute("class", "movie-container");
 
 		const imageDiv = document.createElement("img");
-		imageDiv.setAttribute("class", "film-img");
 		imageDiv.setAttribute("src", image.url);
 		movieContainer.append(imageDiv);
 
