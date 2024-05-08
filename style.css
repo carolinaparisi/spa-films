@@ -90,6 +90,8 @@
 }
 
 .details-card {
+	font-family: "Poppins", sans-serif;
+	color: #ff6d69;
 	gap: 2rem;
 	border-radius: 6px;
 	padding: 4rem;
@@ -102,7 +104,8 @@
 }
 
 .support-details-card {
-	border: 4px solid magenta;
+	gap: 2rem;
+	font-size: 1.5rem;
 	display: flex;
 	flex-direction: column;
 }
@@ -118,17 +121,17 @@
 }
 
 .genresContainer {
-	border: 4px solid blue;
+	background-color: rgb(137, 137, 244);
 }
 
 .yearContainer {
-	border: 4px solid rgb(0, 255, 26);
+	background-color: rgb(137, 137, 244);
 }
 
 .overviewTitle {
-	border: 4px solid blue;
+	background-color: rgb(137, 137, 244);
 }
 
 .overviewText {
-	border: 4px solid blue;
+	background-color: rgb(137, 137, 244);
 }

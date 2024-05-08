@@ -25,6 +25,9 @@ async function show(movieInfo, movieImg) {
 	year.setAttribute("class", "yearContainer");
 	year.innerText = "Released year: " + movieInfo.release_date.split("-")[0];
 
+	const supportOverview = document.createElement("div");
+	supportOverview.setAttribute("class", "support-overview");
+
 	const overviewTitle = document.createElement("div");
 	overviewTitle.setAttribute("class", "overviewTitle");
 	overviewTitle.innerText = "Overview:";
@@ -41,10 +44,11 @@ async function show(movieInfo, movieImg) {
 
 	movieCardInfo.append(img);
 	movieCardInfo.append(supportMovieDetailsCard);
+	supportOverview.append(overviewTitle);
+	supportOverview.append(overviewText);
 	supportMovieDetailsCard.append(genres);
 	supportMovieDetailsCard.append(year);
-	supportMovieDetailsCard.append(overviewTitle);
-	supportMovieDetailsCard.append(overviewText);
+	supportMovieDetailsCard.append(supportOverview);
 	supportDiv.append(movieCardInfo);
 	filmContainer.append(supportDiv);
 }
