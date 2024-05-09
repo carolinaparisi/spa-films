@@ -19,28 +19,28 @@ async function show(movieInfo, movieImg) {
 
 	const genres = document.createElement("div");
 	genres.setAttribute("class", "genresContainer");
-	let genreInitialString = "Genres: ";
+	genres.innerHTML = "<p class='bold'>Genres: </p>";
 
 	const year = document.createElement("div");
 	year.setAttribute("class", "yearContainer");
-	year.innerText = "Released year: " + movieInfo.release_date.split("-")[0];
+	year.innerHTML =
+		"<p class='bold'>Released year: </p>" +
+		movieInfo.release_date.split("-")[0];
 
 	const supportOverview = document.createElement("div");
 	supportOverview.setAttribute("class", "support-overview");
 
 	const overviewTitle = document.createElement("div");
 	overviewTitle.setAttribute("class", "overviewTitle");
-	overviewTitle.innerText = "Overview:";
+	overviewTitle.innerHTML = "<p class='bold'>Overview:</p>";
 
 	const overviewText = document.createElement("div");
 	overviewText.setAttribute("class", "overviewText");
 	overviewText.innerText = movieInfo.overview;
 
 	movieInfo.genres.forEach((genre, index) => {
-		genreInitialString = genreInitialString.concat(genre.name + " ");
+		genres.innerHTML += genre.name + " ";
 	});
-
-	genres.innerText = genreInitialString;
 
 	movieCardInfo.append(img);
 	movieCardInfo.append(supportMovieDetailsCard);

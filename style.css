@@ -120,18 +120,6 @@
 	height: 100%;
 }
 
-.genresContainer {
-	background-color: rgb(137, 137, 244);
-}
-
-.yearContainer {
-	background-color: rgb(137, 137, 244);
-}
-
-.overviewTitle {
-	background-color: rgb(137, 137, 244);
-}
-
-.overviewText {
-	background-color: rgb(137, 137, 244);
+.bold {
+	font-weight: bold;
 }
